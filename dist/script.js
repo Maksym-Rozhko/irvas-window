@@ -14033,6 +14033,20 @@ const modals = () => {
     const trigger = document.querySelectorAll(triggerSelector);
     const modal = document.querySelector(modalSelector);
     const close = document.querySelector(closeSelector);
+
+    function showModal() {
+      modal.classList.add('show');
+      document.body.classList.add('modal-open');
+    }
+
+    ;
+
+    function closeModal() {
+      modal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+    }
+
+    ;
     trigger.forEach(btn => {
       btn.addEventListener('click', e => {
         const target = e.target;
@@ -14042,20 +14056,15 @@ const modals = () => {
         }
 
         ;
-        modal.classList.add('show');
-        document.body.classList.add('modal-open');
+        showModal();
       });
     });
-    close.addEventListener('click', () => {
-      modal.classList.remove('show');
-      document.body.classList.remove('modal-open');
-    });
+    close.addEventListener('click', closeModal);
     modal.addEventListener('click', e => {
       const target = e.target;
 
       if (target === modal) {
-        modal.classList.remove('show');
-        document.body.classList.remove('modal-open');
+        closeModal();
       }
     });
   }
