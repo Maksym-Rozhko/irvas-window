@@ -15156,8 +15156,8 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
-  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active', 'fadeInUp');
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click', 'lightSpeedIn');
 });
 
 /***/ }),
@@ -15244,20 +15244,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_0__);
 
 
-const tabs = (parentSelector, tabSelector, contentSelector, activeClass) => {
+const tabs = (parentSelector, tabSelector, contentSelector, activeClass, animatedClass) => {
   const parent = document.querySelector(parentSelector),
         tab = document.querySelectorAll(tabSelector),
         content = document.querySelectorAll(contentSelector);
 
   function hideTabContent() {
     content.forEach(item => item.classList.remove('show'));
+    content.forEach(item => item.classList.remove('animated', animatedClass));
     tab.forEach(item => item.classList.remove(activeClass));
   }
 
   ;
 
   function showTabConent(i = 0) {
-    content[i].classList.add('show');
+    content[i].classList.add('show', 'animated', animatedClass);
     tab[i].classList.add(activeClass);
   }
 
