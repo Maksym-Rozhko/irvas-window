@@ -478,7 +478,7 @@ textarea:focus {
 .glazing_price_btn {
   padding: 2rem 2rem;
 }
-
+.glazing .tree,
 .glazing .aluminum,
 .glazing .plastic,
 .glazing .french,
@@ -574,6 +574,7 @@ textarea:focus {
   color: #000000;
 }
 
+.decoration .internal,
 .decoration .external,
 .decoration .rising,
 .decoration .roof {
