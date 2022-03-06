@@ -55,9 +55,11 @@ const forms = (state) => {
                 })
                 .finally(() => {
                     clearFormInputs();
-
+                    
                     setTimeout(() => {
                         statusMessage.remove();
+                        item.closest('.popup_calc_end').classList.remove('show');
+                        document.body.classList.remove('modal-open');
                     }, 5000);
                 })
         });
