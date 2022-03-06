@@ -4,8 +4,7 @@ const tabs = (parentSelector, tabSelector, contentSelector, activeClass, animate
         content = document.querySelectorAll(contentSelector);
 
     function hideTabContent() {
-        content.forEach(item => item.classList.remove('show'));
-        content.forEach(item => item.classList.remove('animated', animatedClass));
+        content.forEach(item => item.classList.remove('show', 'animated', animatedClass));
 
         tab.forEach(item => item.classList.remove(activeClass));
     };

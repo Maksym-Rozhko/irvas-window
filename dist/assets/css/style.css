@@ -15,7 +15,14 @@ body {
 
 .status {
   display: block;
+}
+.status.failure {
+  font-size: 1.5rem;
   color: red;
+}
+.status.success {
+  font-size: 1.5rem;
+  color: green;
 }
 
 a:hover {
