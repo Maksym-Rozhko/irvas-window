@@ -6,6 +6,10 @@ html {
   font-size: 10px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -69,7 +73,6 @@ textarea:focus {
   margin-bottom: 2rem;
   text-align: center;
   border-radius: 1rem;
-  -moz-box-sizing: border-box;
 }
 
 .form_input::-webkit-input-placeholder {
@@ -1104,6 +1107,23 @@ textarea:focus {
   transform: translateX(-50%);
   margin-top: 1rem;
   padding: 1rem 5rem;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-block {
+  display: flex;
+}
+
+.works .popup img {
+  max-width: 700px;
+  max-height: 700px;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
 }
 
 /*Media*/

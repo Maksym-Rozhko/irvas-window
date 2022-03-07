@@ -1,15 +1,12 @@
-const images = () => {
-    const workSection = document.querySelector('.works'),
+const images = (parentSelector, imageSelector) => {
+    const workSection = document.querySelector(parentSelector),
         imgPopup = document.createElement('div'),
         bigImage = document.createElement('img');
 
     imgPopup.classList.add('popup');
     workSection.append(imgPopup);
 
-    imgPopup.style.justifyContent = 'center';
-    imgPopup.style.alignItems = 'center';
-    imgPopup.style.display = 'none';
-
+    imgPopup.classList.add('flex-center');
     imgPopup.append(bigImage);
 
     workSection.addEventListener('click', e => {
@@ -17,16 +14,18 @@ const images = () => {
 
         const target = e.target;
 
-        if (target && target.classList.contains('preview')) {
-            imgPopup.style.display = 'flex';
+        if (target && target.classList.contains(imageSelector)) {
+            imgPopup.classList.add('flex-block');
+            document.body.classList.add('modal-open');
 
-            const path = target.parentNode.getAttribute('href');
+            const path = target.parentNode.href;
 
-            bigImage.setAttribute('src', path);
+            bigImage.src = path;
         };
 
         if (target && target.matches('div.popup')) {
-            imgPopup.style.display = 'none';
+            imgPopup.classList.remove('flex-block');
+            document.body.classList.remove('modal-open');
         };
     });
 };
